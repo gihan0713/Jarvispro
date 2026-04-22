@@ -6,7 +6,21 @@
 // ===== Configuration =====
 const CONFIG = {
     API_KEY: 'AIzaSyBYE4HGXvTCQvVC-0rfra5Z-tca45UgtzQ',
-    API_URL: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent',
+    API_URL: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent' \
+  -H 'Content-Type: application/json' \
+  -H 'X-goog-api-key: AIzaSyBYE4HGXvTCQvVC-0rfra5Z-tca45UgtzQ' \
+  -X POST \
+  -d '{
+    "contents": [
+      {
+        "parts": [
+          {
+            "text": "Explain how AI works in a few words"
+          }
+        ]
+      }
+    ]
+  }'',
     MAX_HISTORY: 50,
     TYPING_SPEED: 15, // ms per character
 };
